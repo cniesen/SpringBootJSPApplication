@@ -1,0 +1,26 @@
+plugins {
+	id 'java'
+	id 'war'
+	id 'org.springframework.boot' version '3.1.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.niesens.sample'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.0.4'
+	implementation 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:3.0.4'
+	providedRuntime 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.7'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.4'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
